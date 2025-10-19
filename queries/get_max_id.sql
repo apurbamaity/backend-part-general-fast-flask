@@ -1,0 +1,1 @@
+SELECT MAX(dashboard_id) FROM public.items;

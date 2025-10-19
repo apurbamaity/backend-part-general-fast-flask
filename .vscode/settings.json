@@ -1,0 +1,12 @@
+{
+    "editor.tabSize": 8,
+    "workbench.settings.useSplitJSON": false,
+    // Format on save
+    "editor.formatOnSave": true,
+    "editor.insertSpaces": true,
+    // Set Python formatter (choose one)
+    "python.formatting.provider": "black",
+    // Optional: if using autopep8 or yapf instead
+    // "python.formatting.provider": "autopep8",
+    // "python.formatting.autopep8Args": ["--indent-size=4"]
+}

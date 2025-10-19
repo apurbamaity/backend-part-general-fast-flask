@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Items List</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #cccccc;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2>Hello, {{ created_by }}!</h2>
+    <p>Here is the list of items:</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Item Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>dashboard_url</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in board_data %}
+            <tr>
+                <td>{{ item.dashboard_id }}</td>
+                <td>{{ item.dashboard_name }}</td>
+                <td>{{ item.dashboard_description }}</td>
+                <td>{{ item.dashboard_icon }}</td>
+                <td>{{ item.dashboard_url }}</td>
+
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <p>Thank you!</p>
+</body>
+</html>

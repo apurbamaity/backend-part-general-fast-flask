@@ -1,0 +1,86 @@
+{
+    "Itemget": {
+    "type": "object",
+    "properties": {
+      "message": {
+        "type": "string",
+        "example": "okay get request working with {item_id_q} and {item_name}"
+      },
+      "response": {
+        "type": "string",
+        "example": "The given infos are verified"
+      }
+    }
+    },
+    
+    "Itempostreturn-200": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "example": "abc"
+      },
+      "email": {
+        "type": "string",
+        "example": "abc@gmail.com"
+      },
+      "phonenumber": {
+        "type": "string",
+        "example": "1234567890"
+      }
+    }
+    },
+    "InvalidResponse": {
+    "type": "object",
+    "properties": {
+      "message": {
+        "type": "object",
+        "properties": {
+          "<field_name>": {
+            "type": "string",
+            "description": "name of the required field and its error message"
+          }
+        }
+      }
+    }
+    },
+    "ModifyDashboard": {
+    "type": "object",
+    "properties": {
+      "board_data": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "dashboard_id": {
+              "type": "integer",
+              "description": "dashboard id"
+            },
+            "dashboard_name": {
+              "type": "string",
+              "description": "dashboard name"
+            },
+            "dashboard_url": {
+              "type": "string",
+              "description": "dashboard url"
+            },
+            "dashboard_description": {
+              "type": "string",
+              "description": "dashboard description"
+            },
+            "dashboard_icon": {
+              "type": "string",
+              "format": "binary",
+              "description": "dashboard icon"
+            }
+          }
+        }
+      },
+      "created_by": {
+        "type": "string",
+        "format": "email",
+        "description": "user's email id"
+      }
+    }
+  }
+}
