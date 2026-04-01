@@ -90,6 +90,7 @@ with tab2:
         preview = content[:200] + "..." if len(content) > 200 else content
 
         st.write(preview)
+        # dummy update
 
         # 👉 Expandable full content
         with st.expander("See full content"):
@@ -114,7 +115,7 @@ with tab2:
             st.session_state.chat_history.append({"role": "user", "text": user_input})
 
             # 🔥 Call your backend (example)
-            url = f"http://127.0.0.1:5000/ask?user_query={user_input}"
+            url = f"http://127.0.0.1:5000/ask?user_query={user_input}"gi
             response = requests.get(url)
 
             if response.status_code == 200:
