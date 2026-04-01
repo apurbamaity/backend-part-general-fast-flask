@@ -7,6 +7,8 @@ import json
 from Resources.item import Item
 from Resources.itemadd import Itemadd
 from Resources.addsubgoals import Addsubgoals
+from Resources.Fetchdocument import Fetchdocument
+from Resources.ASkquestion import ASkquestion
 
 
 # swagger
@@ -19,7 +21,7 @@ from database import Database
 
 
 app = Flask(__name__)
-CORS(app, resources={r"*": {"origins": "http://localhost:5173"}})
+CORS(app, resources={r"*": {"origins": "http://localhost:8501"}})
 api = Api(app)
 
 # Initialize DB
@@ -27,8 +29,10 @@ db = Database(app)
 
 
 api.add_resource(Item, "/item", resource_class_kwargs={"db": db})
+api.add_resource(Fetchdocument, "/fetchdocument", resource_class_kwargs={"db": db})
 api.add_resource(Itemadd, "/item_add", resource_class_kwargs={"db": db})
 api.add_resource(Addsubgoals, "/subgoals", resource_class_kwargs={"db": db})
+api.add_resource(ASkquestion, "/ask", resource_class_kwargs={"db": db})
 
 
 # Swagger JSON route
